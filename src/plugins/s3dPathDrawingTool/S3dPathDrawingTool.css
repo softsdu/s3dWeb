@@ -1,0 +1,207 @@
+.pathDrawingToolContainer{
+	position: absolute;
+	width: 280px;
+	font-size: 13px;
+	color:#fcfcfc;
+}
+.pathDrawingToolOperationContainer{
+	right: 10px;
+	top: 10px;
+	height: 85px;
+}
+.pathDrawingToolToolbarContainer{
+	right: 10px;
+	top: 110px;
+	height: 125px;
+}
+.pathDrawingToolPointContainer{
+	left: 10px;
+	top: 10px;
+	height: 250px;
+}
+.pathDrawingToolLineContainer{
+	left: 10px;
+	top: 270px;
+	height: 250px;
+}
+.pathDrawingToolConstraintContainer{
+	left: 10px;
+	top: 530px;
+	bottom: 10px;
+}
+.pathDrawingToolBackground{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: #444444;
+	border-radius: 5px;
+	opacity: 0.7;
+	filter: alpha(opacity=70);
+}
+.pathDrawingToolHeader{
+	position: absolute;
+	left: 8px;
+	top: 2px;
+	right: 8px;
+	height: 33px;
+	border-bottom: solid 1px #666666;
+}
+.pathDrawingToolTitle{
+	position: absolute;
+	left: 5px;
+	top: 0px;
+	width: 75px;
+	bottom: 0px;
+	line-height: 32px;
+	color: #CCCCCC;
+	font-size: 14px;
+}
+.pathDrawingToolInnerContainer{
+	position: absolute;
+	left: 10px;
+	top: 36px;
+	right: 5px;
+	bottom: 5px;
+	float: left;
+	overflow: auto;
+}
+.pathDrawingToolInnerOperationContainer{
+	text-align: center;
+}
+.pathDrawingToolInnerPathContainer{
+	position: absolute;
+	left: 10px;
+	top: 36px;
+	right: 5px;
+	height: 45px;
+	float: left;
+	overflow: auto;
+}
+.pathDrawingToolInnerConstraintContainer{
+	position: absolute;
+	left: 10px;
+	top: 76px;
+	right: 5px;
+	bottom: 5px;
+	float: left;
+	overflow: auto;
+}
+.pathDrawingToolOperationBtnContainer{
+	position: relative;
+	margin: 5px;
+	border-radius: 5px;
+	border: #888888 solid 1px;
+	width: 80px;
+	height: 32px;
+	line-height: 32px;
+	text-align: center;
+	display: inline-block;
+	cursor: pointer;
+}
+.pathDrawingToolOperationBtnContainer:hover{
+	background-color: #DDDDDD;
+	color: #333333;
+}
+.pathDrawingToolToolbarBtnContainer{
+	position: relative;
+	margin: 5px;
+	border-radius: 5px;
+	border: #888888 solid 1px;
+	width: 32px;
+	height: 32px;
+	display: inline-block;
+}
+.pathDrawingToolToolbarBtnSvg{
+	position: relative;
+	margin: 0px;
+	padding: 0px;
+	cursor: pointer;
+	image-rendering: pixelated;
+}
+.pathDrawingToolToolbarBtnContainer:hover{
+	background-color: #DDDDDD;
+	color: #333333;
+}
+.pathDrawingTableHeader{
+	position: relative;
+	width: 100%;
+	height: 30px;
+	padding-top: 1px;
+	color: #CCCCCC;
+	font-weight: 600;
+	border-bottom: solid 1px #666666;
+	text-align: left;
+}
+.pathDrawingTableRow{
+	position: relative;
+	width: 100%;
+	height: 30px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	color: #CCCCCC;
+}
+.pathDrawingTableRow:hover{
+	background-color: #DDDDDD;
+	color: #333333;
+}
+.pathDrawingCell{
+	position: relative;
+	width: 60px;
+	height: 100%;
+	float: left;
+	line-height: 26px;
+}
+.pathDrawingCellName{
+	width: 45px;
+}
+.pathDrawingCellNameSelected{
+	color: #FF0000;
+	font-weight: 600;
+}
+.pathDrawingCellNoneError{
+	font-weight: 600;
+	color: #FFFF00;
+	display: none;
+}
+.pathDrawingCellError{
+	display: inline-block;
+}
+.pathDrawingCellInputNumber{
+	width: 70px;
+	color: #000000;
+	border-width: 0px;
+	margin-left: 2px;
+	margin-right: 2px;
+}
+.pathDrawingCellInputNumber::-webkit-inner-spin-button,
+.pathDrawingCellInputNumber::-webkit-outer-spin-button {
+	height: 24px;
+}
+.pathDrawingCellString{
+	width: 40px;
+}
+.pathDrawingCellBtnHeader{
+	width: 30px;
+	text-align: center;
+}
+.pathDrawingCellBtn{
+	width: 30px;
+	cursor: pointer;
+	border-radius: 3px;
+	text-align: center;
+	font-size: 16px;
+	display: none;
+}
+.pathDrawingTableRow:hover .pathDrawingCellBtn{
+	background-color: #DDDDDD;
+	color: #333333;
+	display: block;
+}
+.pathDrawingItemCount{
+	font-size: 11px;
+}
+.toolbarText{
+	font-size: 10px;
+}

@@ -1,0 +1,278 @@
+.s3dAdderContainer{
+	position: absolute;
+    right: 10px;
+    top:10px;
+	width:330px;
+	bottom:240px;     
+    font-size:13px;
+    color:#fcfcfc;
+}
+.s3dAdderCategoryTreeContainer{
+	position: absolute; 
+    left:8px;
+    top:38px;
+	width: 100px;
+	bottom:5px;
+	overflow-y: auto; 
+	border-right: solid 1px #666666;
+}
+
+.s3dAdderCategoryTreeContainer::-webkit-scrollbar{
+	width: 4px;
+	height: 4px;
+    background-color: transparent; 
+}
+.s3dAdderCategoryTreeContainer::-webkit-scrollbar-thumb{
+    background-color: #888888; 
+}
+.s3dAdderCategoryTreeContainer::-webkit-input-placeholder { /* WebKit browsers */
+	color: transparent;
+  	font-size: 10px;
+}
+
+.s3dAdderCategoryTreeContainer::-moz-placeholder { /* Mozilla Firefox 19+ */
+  	color: transparent;
+  	font-size: 10px;
+}
+.s3dAdderCategoryTreeContainer::-ms-input-placeholder { /* Internet Explorer 10+ */
+	color: transparent;
+  	font-size: 10px;
+}
+
+.s3dAdderComponentListContainer{
+	position: absolute; 
+    left:110px;
+    top:38px;
+	right: 7px;
+	bottom:5px;
+	overflow-y: auto; 
+}
+
+.s3dAdderComponentListContainer::-webkit-scrollbar{
+	width: 4px;
+	height: 4px;
+    background-color: transparent; 
+}
+.s3dAdderComponentListContainer::-webkit-scrollbar-thumb{
+    background-color: #888888; 
+}
+.s3dAdderComponentListContainer::-webkit-input-placeholder { /* WebKit browsers */
+	color: transparent;
+  	font-size: 10px;
+}
+
+.s3dAdderComponentListContainer::-moz-placeholder { /* Mozilla Firefox 19+ */
+ 	 color: transparent;
+  	font-size: 10px;
+}
+.s3dAdderComponentListContainer::-ms-input-placeholder { /* Internet Explorer 10+ */
+	color: transparent;
+  	font-size: 10px;
+}
+
+.s3dAdderHeader{
+	position: absolute; 
+    left:8px;
+    top:2px;
+	right:8px;
+	height: 33px;
+	border-bottom:1px solid #888888;
+}
+.s3dAdderTitle{
+	position: absolute; 
+    left:5px;
+    top:0px;
+	right:0px;
+	bottom:0px;
+	line-height:33px; 
+	color:#CCCCCC;
+	font-size:14px;
+}
+.s3dAdderCloseBtn{
+	position: absolute;  
+    top:5px;
+	right:0px;
+	height:24px;
+	width:20px;
+	line-height:24px;
+	font-size:24px;
+	text-align:center;
+	color:#888888;
+	cursor: default;
+}
+.s3dAdderCloseBtn:hover{
+	color:#cccccc;
+}
+.s3dAdderBackground{
+	position: absolute;	
+	width: 100%;
+	height: 100%;  
+	background-color: #444444;
+	border-radius: 5px;
+	opacity: 0.7;
+	filter: alpha(opacity=70); 
+}
+.s3dAdderNodeContainer{
+	position:relative; 
+    overflow: hidden;  
+    width:100%;
+	height:auto
+}
+.s3dAdderNodeHeader{
+	position: relative;
+	width: 100%;
+	height: 36px;
+}
+.s3dAdderNodeHeader:hover{ 
+	color: #7bff00;
+}
+.s3dAdderNodeHeaderActive{ 
+	color: #7bff00;
+	font-weight: 600;
+	font-size: 14px;
+}
+.s3dAdderNodeTitle{
+	position: absolute; 
+    overflow: hidden;   
+    left:16px;
+    right:0px;
+    top:0px;
+    bottom:0px;  
+	text-align:left;
+	line-height:30px;
+	cursor:pointer;
+}
+.s3dAdderChildrenContainer{
+	position: relative;
+	margin-left: 10px; 
+	width:auto;
+	height:auto;
+}
+.s3dAdderNode{
+	position: absolute; 
+    overflow: hidden;   
+    left:0px;
+    width:20px;
+    top:11px;
+    height:9px;
+}
+.s3dAdderNodeExpand{
+	
+}
+.s3dAdderNodeExpand:before{
+	content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-right: 9px solid #aaaaaa;
+    border-top: 9px solid transparent;
+}
+
+.s3dAdderNodeCollapse{
+	
+}
+.s3dAdderNodeCollapse:before{
+	content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-right: 9px solid #aaaaaa;
+    border-top: 9px solid transparent;
+    transform: rotate(-45deg);
+}
+.s3dAdderHidden{
+	display:none;
+}
+.s3dAdderComponentContainer{
+	position: relative;
+	height:110px;
+	width: 92px;
+	float:left;
+	margin-top:3px;
+	margin-left:8px;
+	cursor: pointer;
+}
+.s3dAdderComponentContainer:hover .s3dAdderComponentHeader{   
+	font-weight: 600;
+}
+.s3dAdderComponentContainer:hover .s3dAdderComponentImageContainer{ 
+	border: solid 1px #7bff00;
+} 
+.s3dAdderComponentContainerActive .s3dAdderComponentImageContainer{
+	border: solid 1px #7bff00;
+}
+.s3dAdderComponentImageContainer{
+	position: absolute;
+	top:0px;
+	left:0px;
+	right:0px;
+	height:82px;
+	border: 0px solid #505050;
+	border-radius: 2px;
+	text-align: center;
+	border: solid 1px #444444;
+}
+.s3dAdderComponentImageText{ 
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 100%;
+	height: auto;
+	text-align: center; 
+  	-webkit-transform: translateX(-50%) translateY(-50%);
+	font-size: 13px; 
+	color:#aaaaaa;
+}
+.s3dAdderComponentImage{
+	position: relative;
+	width:auto;
+	height:auto;
+	max-width:100%;
+	max-height:100%;
+	top: 50%;  
+	left: 50%;   
+	width: 100%;  
+	height: auto; 
+	text-align: center; 
+  	-webkit-transform: translateX(-50%) translateY(-50%);
+}
+.s3dAdderComponentHeader{
+	position: absolute;
+	height:auto;
+	left:0px;
+	right:0px;
+	bottom:5px;
+}
+.s3dAdderComponentHeaderBackground{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-color: #999999;
+	opacity: 0.3;
+	filter: alpha(opacity=30);
+	display: none;
+}
+.s3dAdderComponentContainer:hover .s3dAdderComponentHeaderBackground{ 
+	display: block;
+}
+.s3dAdderComponentContainerActive .s3dAdderComponentHeaderBackground{ 
+	display: block;
+}
+.s3dAdderComponentTitle{
+	position: relative;  
+	width:100%;
+	height: 100%;
+	text-align: center;
+	font-size: 12px;
+	overflow: hidden;
+	padding:3px;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+.s3dAdderComponentNone{
+	position: relative;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	color:#CCCCCC;
+}

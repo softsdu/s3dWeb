@@ -1,0 +1,140 @@
+.s3dExporterContainer {
+	position: absolute; 
+    overflow: hidden;  
+    font-size: 13px;
+	top: 0px;
+	left: 0px;
+	width:100%;
+	height:100%;  
+	text-align:center;
+	z-index: 999;
+} 
+.s3dExporterBackground{
+	position: absolute;	
+	width: 100%;
+	height: 100%;  
+	background-color: #AAAAAA;
+	opacity: 0.5;
+	filter: alpha(opacity=50); 
+}
+.s3dExporterOuterContainer{
+	position: absolute; 
+	width: 300px;
+	height: 200px; 
+	top:40%;
+	left:50%;
+	margin-top:-50px;
+	margin-left:-150px;
+	line-height:100px;
+	background-color: #444444;
+	border-radius: 5px;
+}
+.s3dExporterInnerContainer{
+	position: absolute; 
+	width: 100%;
+	bottom: 0px; 
+	top:35px;
+	left:0;
+	text-align: center;
+}
+.s3dExporterHeader{
+	position: absolute; 
+    left:8px;
+    top:2px;
+	right:8px;
+	height: 33px;
+	border-bottom:1px solid #888888;
+}
+.s3dExporterTitle{
+	position: absolute; 
+    left:5px;
+    top:0px;
+	width:100px;
+	bottom:0px;
+	line-height:32px; 
+	color:#CCCCCC;
+	font-size:14px;
+	text-align: left;
+}
+.s3dExporterCloseBtn{
+	position: absolute;  
+    top:5px;
+	right:0px;
+	height:24px;
+	width:20px;
+	line-height:24px;
+	font-size:24px;
+	text-align:center;
+	color:#AAAAAA;
+	cursor: default;
+}
+.s3dExporterCloseBtn:hover{
+	color:#EEEEEE;
+}
+.s3dExportButton{
+	position: relative;
+	width: 120px;
+	height: 110px;
+	margin-top: 15px;
+	margin-left: 20px; 
+	float: left;
+	border: solid 1px #555555;
+	background-color: #505050;
+	border-radius: 3px;
+}
+.s3dExportButton:hover{
+	background-color: #DDDDDD;
+	cursor: pointer;	
+}
+.s3dExportButton:hover .s3dExporterText{
+	color: #222222; 
+	font-weight: 600;
+}
+.s3dExportButton:hover .s3dExporterSubText{
+	color: #333333;
+}
+.s3dExporterText{
+	position: absolute; 
+	left: 10px;
+	right: 10px;
+	top: 20px;
+	bottom: 10px;
+	line-height:20px;
+	font-size: 15px;	
+	color: #DDDDDD; 
+	text-align: center;
+}
+.s3dExporterSubText{
+	position: absolute; 
+	left: 10px;
+	right: 10px;
+	top: 45px;
+	bottom: 10px;
+	line-height:18px;
+	font-size: 13px;
+	color: #EEEEEE; 
+	text-align: center;
+	color: #AAAAAA;
+}
+.s3dExporterBottom{
+	position: absolute;
+	bottom: 10px;
+	left: 20px;
+	right: 20px;
+	height:25px;
+	color: #DDDDDD;
+}
+.s3dExporterBottomText{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	line-height: 25px;
+	text-align: center;
+} 
+.s3dExporterDownloadLink{
+	text-decoration: underline;
+	color: #DDDDDD;
+}
+.s3dExporterDownloadLink:hover{
+	color: #FFFF00;
+}

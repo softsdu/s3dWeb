@@ -1,0 +1,20 @@
+{
+  "imports": {
+    "three": "/src/commonjs/threejs/build/three.module.js",
+    "tween": "/src/commonjs/threejs/examples/jsm/libs/tween.module.min.js",
+    "gltfLoader": "/src/commonjs/threejs/examples/jsm/loaders/GLTFLoader.js",
+    "gltfExporter": "/src/commonjs/threejs/examples/jsm/exporters/GLTFExporter.js",
+    "fbxLoader": "/src/commonjs/threejs/examples/jsm/loaders/FBXLoader.js",
+    "rgbeLoader": "/src/commonjs/threejs/examples/jsm/loaders/RGBELoader.js",
+    "fontLoader": "/src/commonjs/threejs/examples/jsm/loaders/FontLoader.js",
+    "textGeometry": "/src/commonjs/threejs/examples/jsm/geometries/TextGeometry.js",
+    "transformControls": "/src/commonjs/threejs/examples/jsm/controls/TransformControls.js",
+    "css2dRenderer": "/src/commonjs/threejs/examples/jsm/renderers/CSS2DRenderer.js",
+    "orbitControls": "/src/commonjs/threejs/examples/jsm/controls/OrbitControls.js",
+    "bufferGeometryUtils": "/src/commonjs/threejs/examples/jsm/utils/BufferGeometryUtils.js",
+    "line2": "/src/commonjs/threejs/examples/jsm/lines/Line2.js",
+    "lineMaterial": "/src/commonjs/threejs/examples/jsm/lines/LineMaterial.js",
+    "lineGeometry": "/src/commonjs/threejs/examples/jsm/lines/LineGeometry.js",
+    "zipjs": "/src/commonjs/zipjs/index.js"
+  }
+}

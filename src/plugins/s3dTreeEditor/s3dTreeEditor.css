@@ -1,0 +1,497 @@
+.s3dTreeEditorContainer{
+	position: absolute;
+    left:10px;
+    top:10px;
+	width:260px;
+	height:400px;     
+    font-size:13px;
+    color:#fcfcfc;
+}
+.s3dTreeEditorInnerContainer{
+	position: absolute; 
+    left:8px;
+    top:38px;
+	right:8px;
+	bottom:5px;
+	overflow-y: auto; 
+}
+.s3dTreeEditorHeader{
+	position: absolute; 
+    left:8px;
+    top:2px;
+	right:8px;
+	height: 33px;
+	border-bottom:1px solid #888888;
+}
+.s3dTreeEditorTitle{
+	position: absolute; 
+    left:5px;
+    top:0px;
+	right:0px;
+	bottom:0px;
+	line-height:33px; 
+	color:#CCCCCC;
+	font-size:14px;
+}
+
+/*标题栏按钮*/
+.s3dTreeEditorHeaderBtn{
+	position: absolute;  
+    top:5px;
+	right:0px;
+	height:24px;
+	width:20px;
+	line-height:24px;
+	font-size:24px;
+	text-align:center;
+	color:#AAAAAA;
+	cursor: default;	
+}
+.s3dTreeEditorHeaderBtn:hover{
+	color:#cccccc;
+}
+
+/*关闭按钮*/
+.s3dTreeEditorCloseBtn{
+	right:0px;
+} 
+
+/*新建分组按钮*/
+.s3dTreeEditorAddRootGroupBtn{
+	font-size:20px;
+	right:50px;
+} 
+
+/*批量切换分组分组按钮*/
+.s3dTreeEditorMultiNodeChangeParentBtn{
+	font-size:15px;
+	right:25px;
+} 
+
+
+.s3dTreeEditorBackground{
+	position: absolute;	
+	width: 100%;
+	height: 100%;  
+	background-color: #444444;
+	border-radius: 5px;
+	opacity: 0.7;
+	filter: alpha(opacity=70); 
+}
+.s3dTreeEditorNodeContainer{
+	position:relative; 
+    overflow: hidden;  
+    width:100%;
+	height:auto
+}
+.s3dTreeEditorNodeHeader{
+	position: relative;
+	width: 100%;
+	height: 30px; 	
+}
+.s3dTreeEditorNodeHeaderActive{
+	font-weight: 600;	
+	color:#7bff00;
+}
+.s3dTreeEditorNodeTitle{
+	position: absolute; 
+    overflow: hidden;   
+    left:42px;
+    right:0px;
+    top:0px;
+    bottom:0px;  
+	text-align:left;
+	line-height:30px;
+	cursor:pointer;
+	text-wrap: nowrap;
+	text-overflow: ellipsis;
+} 
+.s3dTreeEditorNodeCheckbox{
+	position:absolute;
+	left:20px;
+	width:14px;
+	top:7px;
+	height:14px; 
+    line-height: 13px; 
+    border:solid 1px #666666;
+    background-color:#eeeeee;
+    color:#000000;
+    text-align:center;
+}
+.s3dTreeEditorNodeCheckboxPart{ 
+
+}
+.s3dTreeEditorNodeCheckboxNone{ 
+
+}
+.s3dTreeEditorNodeCheckboxChecked{ 
+	
+}
+.s3dTreeEditorNodeCheckboxNone:after{
+	content: " ";
+    display: block;
+}
+.s3dTreeEditorNodeCheckboxPart:after{
+	content: '\2013';
+    display: block;
+}
+.s3dTreeEditorNodeCheckboxChecked:after{
+	content: '\2714';
+    display: block;
+}
+.s3dTreeEditorChildrenContainer{
+	position: relative;
+	margin-left: 20px; 
+	width:auto;
+	height:auto;
+}
+.s3dTreeEditorNode{
+	position: absolute; 
+    overflow: hidden;   
+    left:3px;
+    width:20px;
+    top:9px;
+    bottom:0px;    
+}
+.s3dTreeEditorNodeExpand{
+	
+}
+.s3dTreeEditorNodeExpand:before{
+	content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-right: 9px solid #aaaaaa;
+    border-top: 9px solid transparent;
+}
+
+.s3dTreeEditorNodeCollapse{
+	
+}
+.s3dTreeEditorNodeCollapse:before{
+	content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-right: 9px solid #aaaaaa;
+    border-top: 9px solid transparent;
+    transform: rotate(-45deg);
+}
+.s3dTreeEditorHidden{
+	display:none;
+}
+
+/*节点*/
+.s3dTreeEditorNodeBtn{
+	position: absolute;  
+    top:3px;
+	right:0px;
+	height:24px;
+	width:20px;
+	line-height:24px;
+	font-size:13px;
+	text-align:center;
+	color:#888888;
+	cursor: default;
+	display: none;
+	color: #ffCCCC;
+}
+.s3dTreeEditorNodeHeader:hover .s3dTreeEditorNodeBtn{
+	display: block;
+}
+.s3dTreeEditorNodeBtn:hover{
+	color:#FFFFFF;
+	font-weight: 600;
+	background-color: #888888;
+}
+
+
+/*删除节点*/
+.s3dTreeEditorNodeDeleteBtn{
+	right:0px;
+}
+
+/*移动节点*/
+.s3dTreeEditorNodeChangeParentBtn{
+	right:20px;
+}
+
+/*新建组节点*/
+.s3dTreeEditorNodeAddSubGroupBtn{
+	font-size: 15px;
+	right:40px;
+}
+
+/*重命名节点（组）*/
+.s3dTreeEditorNodeRenameBtn{
+	right:40px;
+}
+
+/*重命名、新建组，输入名称的窗口*/
+.s3dTreeEditorNameContainer {
+	position: absolute; 
+    overflow: hidden;  
+    font-size: 14px;
+	top: 0px;
+	width:100%;
+	height:100%;  
+	text-align:center;
+	z-index: 999;
+} 
+.s3dTreeEditorNameBackground{
+	position: absolute;	
+	width: 100%;
+	height: 100%;  
+	background-color: #AAAAAA;
+	opacity: 0.5;
+	filter: alpha(opacity=50); 
+}
+.s3dTreeEditorNameOuterContainer{
+	position: absolute; 
+	width: 300px;
+	height: 140px; 
+	top:40%;
+	left:50%;
+	margin-top:-50px;
+	margin-left:-150px;
+	background-color: #444444;
+	border-radius: 5px;
+}
+.s3dTreeEditorNameInnerContainer{
+	position: absolute; 
+	width: 100%;
+	bottom: 0px; 
+	top:35px;
+	left:0;
+	text-align: center;
+}
+.s3dTreeEditorNameHeader{
+	position: absolute; 
+    left:8px;
+    top:2px;
+	right:8px;
+	height: 33px;
+	border-bottom:1px solid #888888;
+}
+.s3dTreeEditorNameTitle{
+	position: absolute; 
+    left:5px;
+    top:0px;
+	width:100px;
+	bottom:0px;
+	line-height:32px; 
+	color:#CCCCCC;
+	font-size:14px;
+	text-align: left;
+}
+.s3dTreeEditorNameCloseBtn{
+	position: absolute;  
+    top:5px;
+	right:0px;
+	height:24px;
+	width:20px;
+	line-height:24px;
+	font-size:24px;
+	text-align:center;
+	color:#AAAAAA;
+	cursor: default;
+}
+.s3dTreeEditorNameCloseBtn:hover{
+	color:#EEEEEE;
+}
+.s3dTreeEditorNameItem{
+	position: relative;
+	height: 45px;
+}
+.s3dTreeEditorNameItemTitle{
+	position: absolute; 
+	left: 0px;
+	width: 80px;
+	top: 10px;
+	bottom: 5px;
+	line-height:20px;
+	font-size: 15px;	
+	color: #DDDDDD; 
+	text-align: center;
+	padding-top:5px;
+	text-align: right;
+}
+.s3dTreeEditorNameItemValue{
+	position: absolute; 
+	left: 90px;
+	right: 10px;
+	top: 10px;
+	bottom: 5px;
+	line-height:18px;
+	text-align: center;
+	color: #AAAAAA;
+} 
+.s3dTreeEditorNameInput{
+	color:#000000;
+	position: relative; 
+	height: 100%;
+	width: 100%;
+} 
+.s3dTreeEditorNameButton{
+	position: relative; 
+	width: 100px;
+	height: 100%;
+	line-height: 28px;
+	border: solid 1px #555555;
+	background-color: #505050;
+	border-radius: 3px;
+	float: right;
+}
+.s3dTreeEditorNameButton:hover{
+	background-color: #DDDDDD;
+	cursor: pointer;	
+}
+.s3dTreeEditorNameButton:hover .s3dTreeEditorNameText{
+	color: #222222; 
+	font-weight: 600;
+} 
+
+/*更换分组*/
+.s3dTreeEditorChangeParentContainer {
+	position: absolute; 
+    overflow: hidden;  
+    font-size: 14px;
+	top: 0px;
+	width:100%;
+	height:100%;  
+	text-align:center;
+	z-index: 999;
+} 
+.s3dTreeEditorChangeParentBackground{
+	position: absolute;	
+	width: 100%;
+	height: 100%;  
+	background-color: #AAAAAA;
+	opacity: 0.5;
+	filter: alpha(opacity=50); 
+}
+.s3dTreeEditorChangeParentOuterContainer{
+	position: absolute; 
+	width: 400px;
+	height: 400px; 
+	top:30%;
+	left:50%;
+	margin-top:-50px;
+	margin-left:-150px;
+	background-color: #444444;
+	border-radius: 5px;
+}
+.s3dTreeEditorChangeParentInnerContainer{
+	position: absolute; 
+	bottom: 0px; 
+	top:35px;
+	left:7px;
+	right:7px;
+	text-align: center;
+}
+.s3dTreeEditorChangeParentTree{
+	position: absolute;
+	top: 0px;
+	bottom: 50px;
+	left: 0px;
+	right: 0px;
+	overflow: auto;
+}
+.s3dTreeEditorChangeParentBottom{
+	position: absolute;
+	width: 100%;
+	height:50px;
+	bottom: 0px;
+}
+.s3dTreeEditorChangeParentButton{
+	position: absolute; 
+	width: 100px; 
+	top: 5px;
+	bottom: 15px;
+	line-height: 28px;
+	border: solid 1px #555555;
+	background-color: #666666;
+	border-radius: 3px; 
+	color: #CCCCCC;
+}
+.s3dTreeEditorChangeParentButton:hover{
+	background-color: #DDDDDD;
+	cursor: pointer;	
+}
+.s3dTreeEditorChangeParentButton:hover{
+	color: #222222; 
+	font-weight: 600;
+}
+.s3dTreeEditorChangeParentButtonOK{
+	right: 10px;
+}
+.s3dTreeEditorChangeParentButtonRoot{
+	left: 10px;
+}
+
+.s3dTreeEditorChangeParentHeader{
+	position: absolute; 
+    left:8px;
+    top:2px;
+	right:8px;
+	height: 33px;
+	border-bottom:1px solid #888888;
+}
+.s3dTreeEditorChangeParentTitle{
+	position: absolute; 
+    left:5px;
+    top:0px;
+	width:100px;
+	bottom:0px;
+	line-height:32px; 
+	color:#CCCCCC;
+	font-size:14px;
+	text-align: left;
+}
+.s3dTreeEditorChangeParentCloseBtn{
+	position: absolute;  
+    top:5px;
+	right:0px;
+	height:24px;
+	width:20px;
+	line-height:24px;
+	font-size:24px;
+	text-align:center;
+	color:#AAAAAA;
+	cursor: default;
+}
+.s3dTreeEditorNameChangeParentBtn:hover{
+	color:#EEEEEE;
+}
+.s3dTreeEditorChangeParentNodeItem{
+	position: relative;
+	height: auto;
+	width: 100%;	
+}
+.s3dTreeEditorChangeParentNodeHeader{
+	position: relative;
+	height: 35px;
+	width: 100%;
+	padding-top: 7px;
+	padding-left: 5px;
+	cursor: pointer;
+	color: #FFFFFF;
+}
+.s3dTreeEditorChangeParentNodeHeader:hover{
+	font-weight: 600;
+}
+.s3dTreeEditorChangeParentNodeHeaderActive{
+	font-weight: 600;
+	color: #7bff00;
+}
+.s3dTreeEditorChangeParentNodeTitle{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	text-align: left;
+}
+.s3dTreeEditorChangeParentSubNodeContainer{
+	position: relative;
+	height: auto;
+	padding-left: 20px;
+}

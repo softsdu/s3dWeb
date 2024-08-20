@@ -1,0 +1,422 @@
+.s3dAppearanceSettingBtnSection3OuterContainer{
+	position: absolute;
+	left:50%;
+	bottom:120px;
+	width:auto;
+	height:80px;
+	font-size:12px;
+	color:#fcfcfc;
+	transform: translateX(-50%);
+	bottom: 260px;
+	z-index: 100;
+}
+.s3dAppearanceSettingBtnSection2OuterContainer{
+	position: absolute;
+	left:50%;
+	bottom:120px;
+	width:auto;
+	height:80px;
+	font-size:12px;
+	color:#fcfcfc;
+	transform: translateX(-50%);
+	bottom: 170px;
+	z-index: 100;
+}
+.s3dAppearanceSettingBtnSection1OuterContainer{
+	position: absolute;
+	left:50%;
+	bottom:120px;
+	width:auto;
+	height:40px;
+	font-size:13px;
+	color:#fcfcfc;
+	transform: translateX(-50%);
+	bottom: 120px;
+	z-index: 100;
+}
+.s3dAppearanceSettingBtnSection3Background{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(to right,
+	transparent 0%, rgba(0, 0, 0, 0.20) 10%,
+	rgba(0, 0, 0, 0.20) 90%, transparent 100%);
+}
+.s3dAppearanceSettingBtnSection2Background{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(to right,
+	transparent 0%, rgba(0, 0, 0, 0.20) 10%,
+	rgba(0, 0, 0, 0.20) 90%, transparent 100%);
+}
+.s3dAppearanceSettingBtnSection1Background{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(to right,
+	transparent 0%, rgba(0, 0, 0, 0.20) 10%,
+	rgba(0, 0, 0, 0.20) 90%, transparent 100%);
+}
+.s3dAppearanceSettingBtnSection3InnerContainer{
+	position: relative;
+	width: auto;
+	height: 100%;
+	padding-left:10px;
+	padding-right:10px;
+	overflow-y: hidden;
+	overflow-x: auto;
+}
+.s3dAppearanceSettingBtnSection2InnerContainer {
+	position: relative;
+	width: auto;
+	height: 100%;
+	padding-left: 10px;
+	padding-right: 10px;
+	overflow-y: hidden;
+	overflow-x: auto;
+}
+.s3dAppearanceSettingBtnSection1InnerContainer{
+	position: relative;
+	width: auto;
+	height: 100%;
+	padding-left:10px;
+	padding-right:10px;
+	overflow-y: hidden;
+	overflow-x: auto;
+}
+.innerContainer{
+
+}
+.innerContainer::-webkit-scrollbar {
+	width: 1px;
+	height: 1px;
+	background-color: transparent;
+}
+.innerContainer::-webkit-scrollbar-thumb {
+ background-color: rgba(0, 0, 0, 0.20);
+}
+.s3dAppearanceSettingGroupBtnContainer{
+	position: relative;
+	width: auto;
+	height: 100%;
+	display: inline-flex;
+}
+.s3dAppearanceSettingBtnContainer{
+	position:relative;
+	overflow: hidden;
+	width:60px;
+	height:80px;
+	border-radius: 3px;
+	margin-left:3px;
+	margin-right:3px;
+	cursor:pointer;
+	display: inline-block;
+	background-color: transparent;
+}
+.s3dAppearanceSettingBtnContainerOnlyText{
+	position:relative;
+	overflow: hidden;
+	width:80px;
+	height:40px;
+	border-radius: 3px;
+	margin-left:3px;
+	margin-right:3px;
+	cursor:pointer;
+	display: inline-block;
+}
+.s3dAppearanceSettingBtnContainer:hover{
+	background-color: #CCCCCC;
+}
+.s3dAppearanceSettingBtnImg{
+	position:absolute;
+	top:10px;
+	left:14px;
+	width:32px;
+	height:32px;
+	text-align:center;
+}
+.s3dAppearanceSettingBtnColor{
+	position:absolute;
+	top:10px;
+	left:14px;
+	width:32px;
+	height:32px;
+	text-align:center;
+	border-radius: 16px;
+	border-width: 0px;
+}
+.s3dAppearanceSettingBtnColorAlpha1{
+	position:absolute;
+	top:10px;
+	left:14px;
+	width:32px;
+	height:32px;
+	text-align:center;
+	border-radius: 16px;
+	border-width: 0px;
+	background:  linear-gradient(
+			100deg,
+			rgba(255, 255, 255, 0.0) 0%,
+			rgba(255, 255, 255, 0.05) 20%,
+			rgba(255, 255, 255, 0.1) 40%,
+			rgba(255, 255, 255, 0.1) 100%
+	);
+	background-size:100% 100%; /* 这里的600%确保颜色可以完全环绕一周 */
+	background-repeat: repeat-x; /* 让渐变在x轴上重复 */
+}
+.s3dAppearanceSettingBtnColorAlpha2{
+	position:absolute;
+	top:10px;
+	left:14px;
+	width:32px;
+	height:32px;
+	text-align:center;
+	border-radius: 16px;
+	border-width: 0px;
+	background:  linear-gradient(
+			135deg,
+			rgba(255, 255, 255, 0.01) 0%,
+			rgba(255, 255, 255, 0.1) 49%,
+			rgba(255, 255, 255, 0.0) 51%,
+			rgba(255, 255, 255, 0.0) 100%
+	);
+	background-size:100% 100%; /* 这里的600%确保颜色可以完全环绕一周 */
+	background-repeat: repeat-x; /* 让渐变在x轴上重复 */
+}
+.s3dAppearanceSettingBtnName{
+	position:absolute;
+	top:45px;
+	left:0px;
+	width:100%;
+	height:30px;
+	text-align:center;
+	line-height: 30px;
+	text-shadow: 0 0 5px #000000;
+}
+.s3dAppearanceSettingBtnNameOnlyText{
+	position:absolute;
+	top:5px;
+	left:0px;
+	width:100%;
+	height:30px;
+	text-align:center;
+	line-height: 30px;
+	text-shadow: 0 0 5px #000000;
+}
+.s3dAppearanceSettingBtnNameOnlyBox{
+	position:absolute;
+	top:5px;
+	left:0px;
+	width:100%;
+	height:30px;
+	border-radius: 3px;
+}
+.s3dAppearanceSettingBtnNameOnlyBoxActive{
+	border: solid 1px #ffbe62;
+}
+.s3dAppearanceSettingBtnNameActive{
+	color: #ffbe62;
+}
+.s3dAppearanceSettingGroupSectionOuterContainer{
+	position: absolute;
+	left:50%;
+	bottom:70px;
+	width:auto;
+	height:40px;
+	font-size:13px;
+	color:#fcfcfc;
+	transform: translateX(-50%);
+	z-index: 100;
+}
+.s3dAppearanceSettingGroupSectionBackground{
+	position: absolute;
+	top: 80px;
+	width: auto;
+	height: 100%;
+	background-color: #444444;
+	opacity: 0.85;
+	filter: alpha(opacity=85);
+}
+.s3dAppearanceSettingGroupSectionInnerContainer{
+	position: relative;
+	width: auto;
+	height: 100%;
+	display: flex;
+}
+.s3dAppearanceSettingGroupContainer{
+	position: relative;
+	float: left;
+	width: 90px;
+	height: 100%;
+	color: #DDDDDD;
+	border-bottom: #DDDDDD 2px solid;
+}
+.s3dAppearanceSettingGroupContainer:hover{
+	color: #ffbe62;
+	cursor: pointer;
+}
+.s3dAppearanceSettingGroupContainerActive{
+	color: #ffbe62;
+	border-bottom: #940000 4px solid;
+	background-color: transparent;
+}
+.s3dAppearanceSettingGroupName{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	line-height: 40px;
+	text-align: center;
+	text-shadow: 0 0 10px #000000;
+	font-size: 18px;
+}
+.s3dAppearanceSettingDesSectionOuterContainer{
+	position: absolute;
+	left:50%;
+	bottom:10px;
+	width:auto;
+	height:50px;
+	font-size:13px;
+	color:#fcfcfc;
+	transform: translateX(-50%);
+	z-index: 100;
+}
+.s3dAppearanceSettingDesSectionBackground{
+	position: absolute;
+	top: 120px;
+	width: auto;
+	height: 100%;
+	background-color: transparent;
+}
+.s3dAppearanceSettingDesSectionInnerContainer{
+	position: relative;
+	width: auto;
+	height: 100%;
+}
+.s3dAppearanceSettingDesContainer{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+.s3dAppearanceSettingDesText{
+	position: relative;
+	width: auto;
+	height: 100%;
+	text-align: center;
+	white-space: nowrap;
+	display: flex;
+	padding-top: 10px;
+	font-size: 13px;
+	color: #AAAAAA;
+}
+@media (max-width: 1000px) {
+	.s3dAppearanceSettingBtnSection3OuterContainer{
+		bottom:170px;
+		height:55px;
+		font-size:11px;
+	}
+	.s3dAppearanceSettingBtnSection3InnerContainer{
+		padding-left:10px;
+		padding-right:10px;
+		max-width: 330px;
+	}
+	.s3dAppearanceSettingBtnSection2OuterContainer{
+		bottom:105px;
+		height:55px;
+		font-size:11px;
+	}
+	.s3dAppearanceSettingBtnSection2InnerContainer{
+		padding-left:10px;
+		padding-right:10px;
+		max-width: 360px;
+	}
+	.s3dAppearanceSettingBtnSection1OuterContainer{
+		bottom:65px;
+		height:30px;
+		font-size:11px;
+	}
+	.s3dAppearanceSettingBtnSection1InnerContainer{
+		padding-left:10px;
+		padding-right:10px;
+		max-width: 380px;
+	}
+	.s3dAppearanceSettingBtnContainer{
+		width:50px;
+		height:55px;
+	}
+	.s3dAppearanceSettingBtnContainer:hover{
+		background-color: transparent;
+	}
+	.s3dAppearanceSettingBtnContainerOnlyText{
+		width:60px;
+		height:30px;
+	}
+	.s3dAppearanceSettingBtnImg{
+		top:6px;
+		left:12px;
+		width:24px;
+		height:24px;
+	}
+	.s3dAppearanceSettingBtnName{
+		top:32px;
+		height:20px;
+		line-height: 20px;
+		text-shadow: 0 0 5px #000000;
+	}
+	.s3dAppearanceSettingBtnColor{
+		top:6px;
+		left:12px;
+		width:24px;
+		height:24px;
+		border-radius: 12px;
+	}
+	.s3dAppearanceSettingBtnColorAlpha1{
+		top:6px;
+		left:12px;
+		width:24px;
+		height:24px;
+		border-radius: 12px;
+	}
+	.s3dAppearanceSettingBtnColorAlpha2{
+		top:6px;
+		left:12px;
+		width:24px;
+		height:24px;
+		border-radius: 12px;
+	}
+	.s3dAppearanceSettingBtnNameOnlyText{
+		top:3px;
+		height:25px;
+		line-height: 25px;
+		text-shadow: 0 0 5px #000000;
+	}
+	.s3dAppearanceSettingBtnNameOnlyBox{
+		top:3px;
+		height:25px;
+		line-height: 25px;
+		text-shadow: 0 0 5px #000000;
+	}
+	.s3dAppearanceSettingGroupSectionOuterContainer{
+		bottom:25px;
+		height:40px;
+		font-size:12px;
+	}
+	.s3dAppearanceSettingGroupContainer{
+		width: 70px;
+	}
+	.s3dAppearanceSettingGroupName{
+		line-height: 40px;
+		text-shadow: 0 0 5px #000000;
+		font-size: 15px;
+	}
+	.s3dAppearanceSettingDesSectionOuterContainer{
+		bottom:5px;
+		height:20px;
+		font-size:13px;
+	}
+	.s3dAppearanceSettingDesText{
+		padding-top: 5px;
+		font-size: 11px;
+	}
+}
