@@ -1,0 +1,171 @@
+{
+  "name": "testEdit",
+  "code": "testEdit",
+  "versionNum": "1.0",
+  "scene": {
+    "skyBoxName": "downtown"
+  },
+  "axis": {
+    "size": {
+      "x": 50,
+      "y": 50,
+      "z": 50
+    },
+    "gridSpace": 5,
+    "fontSize": 0.75
+  },
+  "camera": {
+    "type": "Orthographic",
+    "target": [
+      0,
+      0,
+      0
+    ],
+    "position": [
+      111.977,
+      73.271,
+      -109.965
+    ],
+    "zoom": 10.47
+  },
+  "parameters": [],
+  "groups": [
+    {
+      "id": "defaultGroup",
+      "name": "默认分组",
+      "isDefault": true,
+      "units": [
+        "0c855606-8253-beaf-7d56-706e3f6795fa",
+        "b3d763ef-0bc3-f921-1662-304686211726",
+        "ab357f00-4b09-f48e-4063-2ea66b9911eb"
+      ]
+    }
+  ],
+  "unitMap": {
+    "ab357f00-4b09-f48e-4063-2ea66b9911eb": {
+      "id": "ab357f00-4b09-f48e-4063-2ea66b9911eb",
+      "code": "0301-1001",
+      "versionNum": "1.0",
+      "name": "绿植01",
+      "position": [
+        35.846158884579474,
+        3.11171,
+        21.60075
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "parameters": {
+        "类型": {
+          "value": "fbx"
+        },
+        "文件夹": {
+          "value": "绿植01"
+        },
+        "文件名": {
+          "value": "plant_1.fbx"
+        },
+        "处理方式": {},
+        "组成部分": {
+          "value": ""
+        },
+        "X缩放": {
+          "value": 0.01
+        },
+        "Y缩放": {
+          "value": 0.01
+        },
+        "Z缩放": {
+          "value": 0.01
+        }
+      },
+      "materials": {}
+    },
+    "b3d763ef-0bc3-f921-1662-304686211726": {
+      "id": "b3d763ef-0bc3-f921-1662-304686211726",
+      "code": "04301-1001",
+      "versionNum": "1.0",
+      "name": "广告牌01",
+      "position": [
+        23.49593798498948,
+        11.37143,
+        25
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "parameters": {
+        "类型": {
+          "value": "fbx"
+        },
+        "文件夹": {
+          "value": "广告牌01"
+        },
+        "文件名": {
+          "value": "autoLogo_C.fbx"
+        },
+        "处理方式": {},
+        "组成部分": {
+          "value": ""
+        },
+        "X缩放": {
+          "value": 0.1
+        },
+        "Y缩放": {
+          "value": 0.1
+        },
+        "Z缩放": {
+          "value": 0.1
+        }
+      },
+      "materials": {}
+    },
+    "0c855606-8253-beaf-7d56-706e3f6795fa": {
+      "id": "0c855606-8253-beaf-7d56-706e3f6795fa",
+      "code": "0101-1001",
+      "versionNum": "1.0",
+      "name": "奔驰GLS580",
+      "position": [
+        0.09422,
+        10.39063,
+        -0.56912
+      ],
+      "rotation": [
+        0,
+        3.141592653589793,
+        0
+      ],
+      "parameters": {
+        "类型": {
+          "value": "fbx"
+        },
+        "文件夹": {
+          "value": "奔驰GLS580"
+        },
+        "文件名": {
+          "value": "Benz_GLS_580.fbx"
+        },
+        "处理方式": {},
+        "组成部分": {
+          "value": ""
+        },
+        "X缩放": {
+          "value": 0.1
+        },
+        "Y缩放": {
+          "value": 0.1
+        },
+        "Z缩放": {
+          "value": 0.1
+        }
+      },
+      "materials": {}
+    }
+  },
+  "materialMap": {},
+  "unitTypeMap": {}
+}
