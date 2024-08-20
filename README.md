@@ -23,15 +23,15 @@ s3dWeb可用于三维场景的在线编辑或展示，主要功能如下：
 
 # 运行效果
 
-test/auto 展示汽车、更换轮毂
+  1. test/auto 展示汽车、更换轮毂
 ![1](https://github.com/user-attachments/assets/329e9656-6f74-4e44-ba89-744d8229ed7a)
 
 
-test/edit3D 小型3D场景编辑
+  2. test/edit3D 小型3D场景编辑
 ![2](https://github.com/user-attachments/assets/8f18464f-26d8-424a-9f6f-8fbdabc3a176)
 
 
-test/factoryEditor 大型3D场景编辑
+  3. test/factoryEditor 大型3D场景编辑
 ![3](https://github.com/user-attachments/assets/13a69522-90d0-47e6-9e82-3d5c29f7bd09)
 
 
