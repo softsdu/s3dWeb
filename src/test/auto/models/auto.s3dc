@@ -1,0 +1,49 @@
+{
+	"id": "47bc3c04-82be-443d-8f61-96bac9241436",
+	"name": "autoPdw",
+	"code": "autoPdw",
+	"versionNum": "1.0",
+	"scene": {
+		"skyBoxName": "downtown"
+	},
+	"axis": {
+		"size": {
+			"x": 1000,
+			"y": 1000,
+			"z": 1000
+		},
+		"gridSpace": 100,
+		"fontSize": 0.1
+	},
+	"camera": {
+		"type": "Perspective",
+		"target": [
+			0,
+			4,
+			0
+		],
+		"position": [
+			-50,
+			20,
+			40
+		],
+		"zoom": 1
+	},
+	"parameters": [
+	],
+	"groups": [
+		{
+			"id": "defaultGroup",
+			"name": "默认分组",
+			"isDefault": true,
+			"units": [
+			]
+		}
+	],
+	"unitMap": {
+	},
+	"materialMap": {
+	},
+	"unitTypeMap": {
+	}
+}
