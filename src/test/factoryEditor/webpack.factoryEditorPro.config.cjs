@@ -3,10 +3,10 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const webpack = require('webpack');
 
 module.exports = {
-    mode: 'development',
+    mode: 'production',
     entry: './src/test/factoryEditor/js/factoryEditor.js',
     output: {
-        path: path.join(__dirname, '../../../dist/factoryEditorDev'),
+        path: path.join(__dirname, '../../../dist/factoryEditorPro'),
         filename: 'test/factoryEditor/js/factoryEditor.js'
     },
     plugins: [

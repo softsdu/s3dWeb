@@ -3,19 +3,19 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const webpack = require('webpack');
 
 module.exports = {
-    mode: 'development',
-    entry: './src/test/factoryEditor/js/factoryEditor.js',
+    mode: 'production',
+    entry: './src/test/edit3d/js/edit3d.js',
     output: {
-        path: path.join(__dirname, '../../../dist/factoryEditorDev'),
-        filename: 'test/factoryEditor/js/factoryEditor.js'
+        path: path.join(__dirname, '../../../dist/edit3dPro'),
+        filename: 'test/edit3d/js/edit3d.js'
     },
     plugins: [
         new CopyWebpackPlugin({
             patterns:[
-                {from: "src/test/factoryEditor/pages", to: "test/factoryEditor/pages"},
-                {from: "src/test/factoryEditor/resources", to: "test/factoryEditor/resources"},
-                {from: "src/test/factoryEditor/models", to: "test/factoryEditor/models"},
-                {from: "src/test/factoryEditor/favicon.ico", to: "favicon.ico"},
+                {from: "src/test/edit3d/pages", to: "test/edit3d/pages"},
+                {from: "src/test/edit3d/resources", to: "test/edit3d/resources"},
+                {from: "src/test/edit3d/models", to: "test/edit3d/models"},
+                {from: "src/test/edit3d/favicon.ico", to: "favicon.ico"},
                 {from: "src/images", to: "images"}
             ]
         }),
@@ -24,7 +24,7 @@ module.exports = {
         host: "127.0.0.1",
         port: 8082,
         open: {
-            target: ['test/factoryEditor/pages/factoryEditor.html']
+            target: ['test/edit3d/pages/edit3d.html']
         },
         compress: true,
     },

@@ -348,13 +348,19 @@
     "autoDev": "webpack-dev-server --config ./src/test/auto/webpack.autoDev.config.cjs",
 
     "build-autoPro": "webpack --config ./src/test/auto/webpack.autoPro.config.cjs",
-    "autPro": "webpack-dev-server --config ./src/test/auto/webpack.autoPro.config.cjs",
+    "autoPro": "webpack-dev-server --config ./src/test/auto/webpack.autoPro.config.cjs",
 
-    "build-edit3d": "webpack --config src/test/edit3d/webpack.edit3dDev.config.cjs",
-    "edit3d": "webpack-dev-server --config src/test/edit3d/webpack.edit3dDev.config.cjs",
+    "build-edit3dDev": "webpack --config src/test/edit3d/webpack.edit3dDev.config.cjs",
+    "edit3dDev": "webpack-dev-server --config src/test/edit3d/webpack.edit3dDev.config.cjs",
 
-    "build-factoryEditor": "webpack --config src/test/factoryEditor/webpack.factoryEditorDev.config.cjs",
-    "factoryEditor": "webpack-dev-server --config src/test/factoryEditor/webpack.factoryEditorDev.config.cjs",
+    "build-edit3dPro": "webpack --config ./src/test/edit3d/webpack.edit3dPro.config.cjs",
+    "edit3dPro": "webpack-dev-server --config ./src/test/edit3d/webpack.edit3dPro.config.cjs",
+
+    "build-factoryEditorDev": "webpack --config src/test/factoryEditor/webpack.factoryEditorDev.config.cjs",
+    "factoryEditorDev": "webpack-dev-server --config src/test/factoryEditor/webpack.factoryEditorDev.config.cjs",
+
+    "build-factoryEditorPro": "webpack --config src/test/factoryEditor/webpack.factoryEditorPro.config.cjs",
+    "factoryEditorPro": "webpack-dev-server --config src/test/factoryEditor/webpack.factoryEditorPro.config.cjs",
 
     "build-house2dEditor": "webpack --config ./src/test/house2dEditor/webpack.house2dEditor.config.cjs",
     "house2dEditor": "webpack-dev-server --config ./src/test/house2dEditor/webpack.house2dEditor.config.cjs"

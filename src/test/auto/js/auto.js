@@ -15,6 +15,8 @@ const appInfo = {
 	path:{
 		root: "../../../",
 		application: "../",
+		resource: "../resources/",
+		//resource: "https://oss/s3dweb_resources/auto/resources/",
 		model: "models/auto.s3dc"
 	},
 	scene: {
@@ -471,7 +473,7 @@ function initBodyPaintHtmls(autoCode){
 			name: bpInfo.name,
 			imgData: {
 				normal: bpInfo.img.normal,
-				directory: appInfo.path.application + "resources/appearanceSettings/bodyPaints"
+				directory: appInfo.path.resource + "appearanceSettings/bodyPaints"
 			}
 		}, "bodyPaint", checked);
 	}
@@ -547,7 +549,7 @@ function initHubGroupHtmls(autoCode, hubTypeCode){
 			name: hubGroupInfo.name,
 			imgData: {
 				normal: hubGroupInfo.img.normal,
-				directory: appInfo.path.application + "resources/appearanceSettings/hubGroups"
+				directory: appInfo.path.resource + "appearanceSettings/hubGroups"
 			}
 		}, "hubGroup", checked);
 		if(checked){
@@ -732,12 +734,12 @@ function initS3dManager(){
 				}
 			},
 			localObjectCreator: {
-				imageFolder:  appInfo.path.application + "resources/materialImages/"
+				imageFolder:  appInfo.path.resource + "materialImages/"
 			},
 			axis: {
 				//hasAxis: true,
 				//hasPlane: true,
-				fontUrl: appInfo.path.application + "resources/fonts/helvetiker_bold.typeface.json"
+				fontUrl: appInfo.path.resource + "fonts/helvetiker_bold.typeface.json"
 			},
 			adder: {
 				//visible: true
@@ -779,7 +781,7 @@ function initS3dManager(){
 				buttonJArray: []
 			},
 			skyBox: {
-				rootUrl: appInfo.path.application + "resources/skies/",
+				rootUrl: appInfo.path.resource + "skies/",
 				skyList: skyList
 			},
 			serverObjectCreator: {},
@@ -797,7 +799,7 @@ function initS3dManager(){
 			materialPicker: {},
 			localMaterialPicker: {},
 			componentLibrary: {
-				rootPath: appInfo.path.application + "resources/files/",
+				rootPath: appInfo.path.resource + "files/",
 				categories: componentList
 			},
 		}

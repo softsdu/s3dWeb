@@ -21,7 +21,7 @@ module.exports = {
         }),
     ],
     devServer: {
-        host: "localhost",
+        host: "127.0.0.1",
         port: 8082,
         open: {
             target: ['test/edit3d/pages/edit3d.html']

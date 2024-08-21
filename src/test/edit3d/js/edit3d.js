@@ -14,6 +14,8 @@ const appInfo = {
 	path:{
 		root: "../../../",
 		application: "../",
+		resource: "../resources/",
+		//resource: "https://oss/s3dweb_resources/edit3d/resources/",
 		model: "models/testEdit.s3dc"
 	}
 }
@@ -217,13 +219,13 @@ function initS3dManager(){
 				}]
 			},
 			skyBox: {
-				rootUrl: appInfo.path.application + "resources/skies/",
+				rootUrl: appInfo.path.resource + "skies/",
 				skyList: skyList
 			},
 			axis: {
 				hasAxis: true,
 				hasPlane: true,
-				fontUrl: appInfo.path.application + "resources/fonts/helvetiker_bold.typeface.json"
+				fontUrl: appInfo.path.resource + "fonts/helvetiker_bold.typeface.json"
 			},
 			statusBar: {
 				visible: true
@@ -232,7 +234,7 @@ function initS3dManager(){
 				visible: true
 			},
 			localObjectCreator: {
-				imageFolder: appInfo.path.application + "resources/materialImages/"
+				imageFolder: appInfo.path.resource + "materialImages/"
 			},
 			serverObjectCreator: {},
 			object3DCache: {},
@@ -257,7 +259,7 @@ function initS3dManager(){
 			materialPicker: {},
 			localMaterialPicker: {},
 			componentLibrary: {
-				rootPath: appInfo.path.application + "resources/files/",
+				rootPath: appInfo.path.resource + "files/",
 				categories: componentList
 			}
 		}
