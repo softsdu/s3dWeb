@@ -23,23 +23,30 @@
 
 # 三、运行效果
 
-  1. test/auto，展示汽车、更换轮毂，截图如下：
-![1](https://github.com/user-attachments/assets/329e9656-6f74-4e44-ba89-744d8229ed7a)
+  1. 小型3D场景编辑
+  
+  地址：[http://it3d.cn/edit3d/test/edit3d/pages/edit3d.html](http://it3d.cn/edit3d/test/edit3d/pages/edit3d.html)
+    
+  截图：
+  ![1](https://github.com/user-attachments/assets/8f18464f-26d8-424a-9f6f-8fbdabc3a176)
+
+  2. 展示汽车、更换轮毂
+  
+  地址：[http://it3d.cn/auto/test/auto/pages/auto.html](http://it3d.cn/auto/test/auto/pages/auto.html)
+    
+  截图：
+  ![2](https://github.com/user-attachments/assets/329e9656-6f74-4e44-ba89-744d8229ed7a)
+
+  3. 大型3D场景编辑
+  
+  地址：[http://it3d.cn/factoryEditor/test/factoryEditor/pages/factoryEditor.html](http://it3d.cn/factoryEditor/test/factoryEditor/pages/factoryEditor.html)
+    
+  截图：
+  ![3](https://github.com/user-attachments/assets/13a69522-90d0-47e6-9e82-3d5c29f7bd09)
 
 
-  2. test/edit3D 小型3D场景编辑，截图如下：
-![2](https://github.com/user-attachments/assets/8f18464f-26d8-424a-9f6f-8fbdabc3a176)
 
 
-  3. test/factoryEditor 大型3D场景编辑，截图如下：
-![3](https://github.com/user-attachments/assets/13a69522-90d0-47e6-9e82-3d5c29f7bd09)
-
-
-
-
-# 四、Demo地址
-暂无
-
-# 五、开发环境搭建
+# 四、开发环境搭建
 暂无
 
