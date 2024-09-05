@@ -241,6 +241,12 @@ let JS3LocalMaterials = function(){
     }
 
     this.initUserMaterialInfos = function (){
+        //切丝机
+        thatLocalMaterials.load("切丝机外壳", 0xCCC0B1, "", "", "", "", null, "", "", 0.4, "", "", 1, "", "", 0.2, null, null, null, false, "CeramicFrosted");
+        thatLocalMaterials.load("切丝机底部", 0xA6ABBC, "", "", "", "", null, "", "", 0.3, "", "", 0.5, "", "", 0.0, null, null, null, false, "MetalFrosted");
+        thatLocalMaterials.load("切丝机大门框", 0x222222, "", "", "", "", null, "", "", 0.3, "", "", 0.1, "", "", 0.2, null, null, null, false, "GlassClearly");
+        thatLocalMaterials.load("切丝机门玻璃", 0xAAAAAA, "", "", "", "", 0.3, "", "", 0.0, "", "", 0.5, "", "", 0.1, null, null, null, false, "GlassClearly");
+
         //Tank300
         thatLocalMaterials.load("Tank300橙色车漆", 0xE54110, "", "", "", "", null, "", "", 0.3, "", "", 0.1, "", "", 0.5, null, null, null, false, "PaintPolished");
         thatLocalMaterials.load("Tank300灰色车漆", 0x666666, "", "", "", "", null, "", "", 0.3, "", "", 0.1, "", "", 0.5, null, null, null, false, "PaintPolished");

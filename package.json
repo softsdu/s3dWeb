@@ -363,7 +363,13 @@
     "factoryEditorPro": "webpack-dev-server --config src/test/factoryEditor/webpack.factoryEditorPro.config.cjs",
 
     "build-house2dEditor": "webpack --config ./src/test/house2dEditor/webpack.house2dEditor.config.cjs",
-    "house2dEditor": "webpack-dev-server --config ./src/test/house2dEditor/webpack.house2dEditor.config.cjs"
+    "house2dEditor": "webpack-dev-server --config ./src/test/house2dEditor/webpack.house2dEditor.config.cjs",
+
+    "build-scene3dEditorDev": "webpack --config ./src/test/scene3dEditor/webpack.scene3dEditorDev.config.cjs",
+    "scene3dEditorDev": "webpack-dev-server --config ./src/test/scene3dEditor/webpack.scene3dEditorDev.config.cjs",
+
+    "build-scene3dEditorPro": "webpack --config ./src/test/scene3dEditor/webpack.scene3dEditorPro.config.cjs",
+    "scene3dEditorPro": "webpack-dev-server --config ./src/test/scene3dEditor/webpack.scene3dEditorPro.config.cjs"
   },
   "keywords": [],
   "author": "",

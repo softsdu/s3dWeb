@@ -8,7 +8,7 @@ import * as skyList from "../resources/skies/list.js";
 let s3dManager = null;
 const appInfo = {
 	base: {
-		name:"Edit3D",
+		name:"Edit3d",
 		key: "f132d797-d6c7-45da-9ca9-950e67035967",
 	},
 	path:{

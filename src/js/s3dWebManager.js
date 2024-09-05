@@ -29,6 +29,7 @@ import S3dSplitter from "../plugins/s3dSplitter/s3dSplitter.js";
 import S3dAppearanceSetting from "../plugins/s3dAppearanceSetting/s3dAppearanceSetting.js";
 import S3dPathDrawingTool from "../plugins/s3dPathDrawingTool/S3dPathDrawingTool.js";
 import S3dHouse2DToolbar from "../plugins/s3dHouse2DToolbar/s3dHouse2DToolbar.js";
+import S3dScene3dToolbar from "../plugins/s3dScene3dToolbar/s3dScene3dToolbar.js";
 import JS3StandardMaterials from "./materials/js3StandardMaterials.js"
 import JS3LocalMaterials from "./materials/js3LocalMaterials.js";
 import "../commonjs/jQuery/jquery.min.js";
@@ -428,6 +429,12 @@ let S3dWebManager = function(){
 					if(typeof S3dHouse2DToolbar != "undefined" && thatS3dWebManager.pluginConfigs.house2DToolbar != null){
 						thatS3dWebManager.initHouse2DToolbar(thatS3dWebManager.pluginConfigs.house2DToolbar);
 						thatS3dWebManager.addPluginToMap("house3DToolbar", thatS3dWebManager.house2DToolbar, true);
+					}
+
+					//scene3dToolbar
+					if(typeof S3dScene3dToolbar != "undefined" && thatS3dWebManager.pluginConfigs.scene3dToolbar != null){
+						thatS3dWebManager.initScene3dToolbar(thatS3dWebManager.pluginConfigs.scene3dToolbar);
+						thatS3dWebManager.addPluginToMap("scene3dToolbar", thatS3dWebManager.scene3dToolbar, true);
 					}
 				}
 			}
@@ -831,6 +838,19 @@ let S3dWebManager = function(){
 			containerId: thatS3dWebManager.containerId,
 			manager: thatS3dWebManager,
 			config: house2DToolbarConfig
+		});
+	}
+
+	this.createScene3dToolbar = function(){
+		return new S3dScene3dToolbar();
+	}
+
+	this.initScene3dToolbar = function(scene3dToolbarConfig){
+		thatS3dWebManager.scene3dToolbar = thatS3dWebManager.createScene3dToolbar();
+		thatS3dWebManager.scene3dToolbar.init({
+			containerId: thatS3dWebManager.containerId,
+			manager: thatS3dWebManager,
+			config: scene3dToolbarConfig
 		});
 	}
 }

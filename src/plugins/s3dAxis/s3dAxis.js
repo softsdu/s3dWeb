@@ -44,11 +44,11 @@ let S3dAxis = function (){
 	this.zMaterial = null;
 
 	//网格材质
-	this.gridColor = 0xCCCCCC;
+	this.gridColor = 0x666666;
 	this.gridMaterial = null;
 	
 	//边框材质
-	this.borderColor = 0x666666;
+	this.borderColor = 0x222222;
 	this.borderMaterial = null;
 
 	//地平面材质
@@ -65,8 +65,8 @@ let S3dAxis = function (){
 		thatS3dAxis.planeMaterial = new THREE.LineBasicMaterial({
 			color: thatS3dAxis.groundColor,
 			side: THREE.DoubleSide,
-			opacity: 1.0,
-			transparent: false
+			opacity: 0.1,
+			transparent: true
 		});
 
 

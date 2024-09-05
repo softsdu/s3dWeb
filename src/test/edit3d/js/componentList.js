@@ -22,6 +22,42 @@ export const componentList = [{
 			}
 		}]
 	}, {
+		code: "0102",
+		name: "切丝机",
+		components: [{
+			code: "0102-1001",
+			name: "南宁切丝机",
+			versionNum: "1.0",
+			isLocal: true,
+			fileInfo: {
+				type: "fbx",
+				directory: "切丝机",
+				fileName: "南宁切丝机.fbx",
+				imgName: "南宁切丝机.jpg"
+			},
+			scale:{
+				x: 0.01,
+				y: 0.01,
+				z: 0.01
+			}
+		},{
+			code: "0102-1002",
+			name: "切丝机",
+			versionNum: "1.0",
+			isLocal: true,
+			fileInfo: {
+				type: "fbx",
+				directory: "0102-1002",
+				fileName: "切丝机.fbx",
+				imgName: "切丝机.jpg"
+			},
+			scale:{
+				x: 0.1,
+				y: 0.1,
+				z: 0.1
+			}
+		}]
+	}, {
 		code: "0201",
 		name: "建筑",
 		components: [{
