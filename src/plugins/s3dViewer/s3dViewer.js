@@ -84,11 +84,20 @@ let S3dViewer = function (){
 	//包含动画
 	this.hasAnimation = false;
 
+	//是否使用选中材质
+	this.useHighlightMaterial = true;
+
 	//控制器配置
 	this.orbitControlConfig = {};
 
 	//事件日志
 	this.eventLogMap = {};
+
+	//动画相关
+	this.animationInfo = {
+		mixer: null,
+		clock: new THREE.Clock()
+	};
 
 	//scene控制器的限制设定
 	this.controlConfig = {
@@ -145,9 +154,10 @@ let S3dViewer = function (){
 
 	//高亮resource边框材质
 	this.hightLightResourceBoxEdgeMaterial = new THREE.LineBasicMaterial({
+		//color: 0x0094FF,
 		color: 0x0094FF,
 		linewidth: 1,
-		opacity: 0.3,
+		opacity: 0.8,
 		transparent: true,
 		depthTest: false
 	});
@@ -192,6 +202,7 @@ let S3dViewer = function (){
 		thatS3dViewer.manager = p.manager;
 		thatS3dViewer.showShadow = p.config.showShadow;
 		thatS3dViewer.mobileAutoRotate = p.config.mobileAutoRotate;
+		thatS3dViewer.useHighlightMaterial = p.config.useHighlightMaterial == null ? true : p.config.useHighlightMaterial;
 		thatS3dViewer.canSelectObject3D = p.config.canSelectObject3D == null ? true : p.config.canSelectObject3D;
 		thatS3dViewer.hasAnimation = p.config.hasAnimation == null ? false : p.config.hasAnimation;
 		thatS3dViewer.detailLevel = p.config.detailLevel == null ? 4 : p.config.detailLevel;
@@ -826,7 +837,8 @@ let S3dViewer = function (){
 			}
 			thatS3dViewer.directionalLights.push(dirLight);
     	} 
-    };  
+    };
+
     
     //animate
     this.animate = function() {
@@ -836,6 +848,11 @@ let S3dViewer = function (){
     	thatS3dViewer.renderer.render(thatS3dViewer.scene, thatS3dViewer.camera);  
     	thatS3dViewer.renderer2d.render(thatS3dViewer.scene, thatS3dViewer.camera);    
         requestAnimationFrame(thatS3dViewer.animate);
+
+		if(thatS3dViewer.animationInfo.mixer != null){
+			thatS3dViewer.animationInfo.mixer.update(thatS3dViewer.animationInfo.clock.getDelta());
+		}
+
     	thatS3dViewer.doEventFunction("afterAnimate", {});
     };
 	
@@ -1410,19 +1427,23 @@ let S3dViewer = function (){
 		if(mesh.isResourceBoxLine){
 			mesh.material = thatS3dViewer.hightLightResourceBoxEdgeMaterial;
 		}
-		if(mesh.isUnitLine){
-			mesh.material = thatS3dViewer.hightLightLineMaterial;
+		if(mesh.isUnitLine) {
+			if (thatS3dViewer.useHighlightMaterial) {
+				mesh.material = thatS3dViewer.hightLightLineMaterial;
+			}
 		}
 		else {
-			if (mesh.material !== null && mesh.material !== undefined) {
-				if (mesh.material.length > 0) {
-					let hightLightMaterials = [];
-					for (let i = 0; i < mesh.originalMaterial.length; i++) {
-						hightLightMaterials.push(thatS3dViewer.hightLightMaterial);
+			if (thatS3dViewer.useHighlightMaterial) {
+				if (mesh.material !== null && mesh.material !== undefined) {
+					if (mesh.material.length > 0) {
+						let hightLightMaterials = [];
+						for (let i = 0; i < mesh.originalMaterial.length; i++) {
+							hightLightMaterials.push(thatS3dViewer.hightLightMaterial);
+						}
+						mesh.material = hightLightMaterials;
+					} else {
+						mesh.material = thatS3dViewer.hightLightMaterial;
 					}
-					mesh.material = hightLightMaterials;
-				} else {
-					mesh.material = thatS3dViewer.hightLightMaterial;
 				}
 			}
 		}
@@ -3023,6 +3044,38 @@ let S3dViewer = function (){
 			tag3D.position.set(object3D.position.x, object3D.position.y, object3D.position.z);
 			tag3D.rotation.set(object3D.rotation.x, object3D.rotation.y, object3D.rotation.z);
 		}
+	}
+
+	//执行动画
+	this.runAnimation = function(unitId, animationName){
+		let object3d = thatS3dViewer.getObject3DById(unitId);
+		let unitInfo = object3d.userData.unitInfo;
+		let resourceDirectory = unitInfo.parameters["文件夹"].value;
+		let resourceFileName = unitInfo.parameters["文件名"].value;
+		let resourcePartName = unitInfo.parameters["组成部分"].value;
+		let resourceType = unitInfo.parameters["类型"].value;
+		let resourceKey = thatS3dViewer.manager.object3DCache.getResourceObject3DKey(resourceDirectory + "\\" + resourceFileName, resourceType);
+		let resourceObjectInfo = thatS3dViewer.manager.object3DCache.getResourceObject3D(resourceKey);
+		let resourceObject3d = resourceObjectInfo.object3D.children[0];
+		let animation = thatS3dViewer.getAnimationByName(resourceObject3d, animationName);
+		let animationObject3d = object3d.children[0].children[0].children[0];
+		thatS3dViewer.animationInfo.mixer = new THREE.AnimationMixer(animationObject3d);
+		let animationAction = thatS3dViewer.animationInfo.mixer.clipAction(animation);
+		animationAction.timeScale = 1;
+		animationAction.loop = THREE.LoopOnce;
+		animationAction.clampWhenFinished = false;
+		animationAction.play();
+	}
+
+	this.getAnimationByName = function (object3d, name){
+		let animations = object3d.animations;
+		for(let i = 0; i < animations.length; i++){
+			let animation = animations[i];
+			if(animation.name === name){
+				return animation;
+			}
+		}
+		return null;
 	}
 }
 export default S3dViewer

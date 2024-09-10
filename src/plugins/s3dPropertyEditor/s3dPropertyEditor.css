@@ -248,3 +248,47 @@
 	background-color: #ff9e28;
 	color:#000000;	
 }
+.s3dPropertyEditorAnimationItem{
+	position: relative;
+	height: 40px;
+	width: 100%;
+}
+.s3dPropertyEditorAnimationName{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	bottom: 0px;
+	right: 110px;
+}
+.s3dPropertyEditorAnimationRunBtn{
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	bottom: 5px;
+	width: 80px;
+	background-color: #ff8c00;
+	cursor: pointer;
+	border-radius: 5px;
+	line-height: 30px;
+	color: #ffffff;
+}
+.s3dPropertyEditorAnimationRunBtn:hover{
+	color: #ffffff;
+	background-color: #ff9e28;
+}
+.s3dPropertyEditorMaterialCode{
+	position: absolute;
+	right: 0px;
+	top: 5px;
+	width: 50px;
+	bottom: 5px;
+	cursor: pointer;
+	font-weight: 400;
+	color: #888888;
+	line-height: 20px;
+	text-align: right;
+}
+.s3dPropertyEditorMaterialCode:hover{
+	color: #ffffff;
+	text-decoration: underline;
+}

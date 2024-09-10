@@ -34,6 +34,7 @@ function initS3dManager(){
 				showShadow: false,
 				canSelectObject3D: true,
 				mobileAutoRotate: true,
+				useHighlightMaterial: false,
 				hemisphereLight: {
 					intensity: 0.7
 				},
@@ -216,6 +217,13 @@ function initS3dManager(){
 							s3dManager.setting.show();
 						}
 					}
+				},{
+					id: "test",
+					name: "测试",
+					imgUrl: appInfo.path.root + "images/toolbar/test.png",
+					onButtonClick: function(p){
+						test();
+					}
 				}]
 			},
 			skyBox: {
@@ -265,6 +273,10 @@ function initS3dManager(){
 		}
 	});
 	return manager;
+}
+
+function  test(){
+	alert("test");
 }
 
 $(document).ready(function(){

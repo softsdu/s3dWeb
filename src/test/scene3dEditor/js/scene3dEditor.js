@@ -53,6 +53,7 @@ function initS3dManager(appInfo, s3dComponentList, s3dModelId, s3dModelName, s3d
 				showShadow: false,
 				canSelectObject3D: true,
 				mobileAutoRotate: true,
+				useHighlightMaterial: false,
 				hemisphereLight: {
 					intensity: 0.7
 				},

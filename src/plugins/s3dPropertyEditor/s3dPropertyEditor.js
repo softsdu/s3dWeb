@@ -1,6 +1,7 @@
 import * as THREE from "three";
-import {cmnPcr, s3dViewerStatus, msgBox, s3dOperateType} from "../../commonjs/common/static.js"
+import {cmnPcr, s3dViewerStatus, msgBox, s3dOperateType, s3dResourceType} from "../../commonjs/common/static.js"
 import "./s3dPropertyEditor.css"
+import {cache} from "browserslist";
 
 //S3dWeb 属性编辑器
 let S3dPropertyEditor = function (){
@@ -119,13 +120,16 @@ let S3dPropertyEditor = function (){
 			+ "<div class=\"s3dPropertyEditorSubTitle\"></div>"
 			+ "<div class=\"s3dPropertyEditorTabContainer\">"
 			+ "<div class=\"s3dPropertyEditorTabHeader s3dPropertyEditorTabHeaderActive\" name=\"baseInfo\">"
-			+ "<div class=\"s3dPropertyEditorTabTitle\">基本信息</div>"
+			+ "<div class=\"s3dPropertyEditorTabTitle\">基础</div>"
 			+ "</div>"
 			+ "<div class=\"s3dPropertyEditorTabHeader\" name=\"seniorInfo\">"
-			+ "<div class=\"s3dPropertyEditorTabTitle\">高级信息</div>"
+			+ "<div class=\"s3dPropertyEditorTabTitle\">高级</div>"
 			+ "</div>"
 			+ "<div class=\"s3dPropertyEditorTabHeader\" name=\"materialInfo\">"
-			+ "<div class=\"s3dPropertyEditorTabTitle\">材质信息</div>"
+			+ "<div class=\"s3dPropertyEditorTabTitle\">材质</div>"
+			+ "</div>"
+			+ "<div class=\"s3dPropertyEditorTabHeader\" name=\"animationInfo\">"
+			+ "<div class=\"s3dPropertyEditorTabTitle\">动画</div>"
 			+ "</div>"
 			+ "</div>"
 			+ "<div class=\"s3dPropertyEditorCloseBtn\">×</div>"
@@ -134,6 +138,7 @@ let S3dPropertyEditor = function (){
 			+ "<div class=\"s3dPropertyEditorInfoContainer s3dPropertyEditorInfoContainerActive\" name=\"baseInfo\"></div>"
 			+ "<div class=\"s3dPropertyEditorInfoContainer\" name=\"seniorInfo\"></div>"
 			+ "<div class=\"s3dPropertyEditorInfoContainer\" name=\"materialInfo\"></div>"
+			+ "<div class=\"s3dPropertyEditorInfoContainer\" name=\"animationInfo\"></div>"
 			+ "</div>"
 			+ "</div>";
 }
@@ -149,8 +154,8 @@ this.refreshPropertyValues = function(unitJson){
     let seniorInfoContainer = $(propertyEditorInnerContainer).find(".s3dPropertyEditorInfoContainer[name='seniorInfo']")[0];
     thatS3dPropertyEditor.refreshSeniorInfo(unitJson, componentInfo, seniorInfoContainer);
 
-    let materialInfoContainer = $(propertyEditorInnerContainer).find(".s3dPropertyEditorInfoContainer[name='materialInfo']")[0];
-    thatS3dPropertyEditor.refreshMaterialInfo(unitJson, materialInfoContainer);
+	let materialInfoContainer = $(propertyEditorInnerContainer).find(".s3dPropertyEditorInfoContainer[name='materialInfo']")[0];
+	thatS3dPropertyEditor.refreshMaterialInfo(unitJson, materialInfoContainer);
 }
 
 //刷新构造属性编辑器
@@ -164,7 +169,8 @@ this.refreshProperties = function(unitJArray){
         let infoHtml = "已选择 0 个图元";
         $(propertyEditorInnerContainer).find(".s3dPropertyEditorInfoContainer[name='baseInfo']").html(infoHtml);
         $(propertyEditorInnerContainer).find(".s3dPropertyEditorInfoContainer[name='seniorInfo']").html(infoHtml);
-        $(propertyEditorInnerContainer).find(".s3dPropertyEditorInfoContainer[name='materialInfo']").html(infoHtml);
+		$(propertyEditorInnerContainer).find(".s3dPropertyEditorInfoContainer[name='materialInfo']").html(infoHtml);
+		$(propertyEditorInnerContainer).find(".s3dPropertyEditorInfoContainer[name='animationInfo']").html(infoHtml);
     }
     else if(unitJArray.length > 1){
         thatS3dPropertyEditor.currentUnitJson = null;
@@ -172,6 +178,7 @@ this.refreshProperties = function(unitJArray){
         $(propertyEditorInnerContainer).find(".s3dPropertyEditorInfoContainer[name='baseInfo']").html(infoHtml);
         $(propertyEditorInnerContainer).find(".s3dPropertyEditorInfoContainer[name='seniorInfo']").html(infoHtml);
         $(propertyEditorInnerContainer).find(".s3dPropertyEditorInfoContainer[name='materialInfo']").html(infoHtml);
+		$(propertyEditorInnerContainer).find(".s3dPropertyEditorInfoContainer[name='animationInfo']").html(infoHtml);
     }
     else{
         let unitJson = unitJArray[0];
@@ -179,7 +186,8 @@ this.refreshProperties = function(unitJArray){
             thatS3dPropertyEditor.currentUnitJson = unitJson;
             thatS3dPropertyEditor.initBaseInfoContainer(propertyEditorInnerContainer, unitJson);
             thatS3dPropertyEditor.initSeniorInfoContainer(propertyEditorInnerContainer, unitJson);
-            thatS3dPropertyEditor.initMaterialInfoContainer(propertyEditorInnerContainer, unitJson);
+			thatS3dPropertyEditor.initMaterialInfoContainer(propertyEditorInnerContainer, unitJson);
+			thatS3dPropertyEditor.initAnimationInfoContainer(propertyEditorInnerContainer, unitJson);
         }
     }
 }
@@ -340,12 +348,68 @@ this.initSeniorInfoContainer = function(propertyEditorInnerContainer, unitJson){
 		});
 	}
 
+
+	this.initAnimationInfoContainer = function(propertyEditorInnerContainer, unitJson){
+		let animationInfoHtml = unitJson.isServer ? "" : thatS3dPropertyEditor.getAnimationInfoContainerHtml(unitJson);
+		let animationInfoContainer = $(propertyEditorInnerContainer).find(".s3dPropertyEditorInfoContainer[name='animationInfo']")[0];
+		$(animationInfoContainer).html(animationInfoHtml);
+		$(animationInfoContainer).find(".s3dPropertyEditorAnimationRunBtn").click(function (){
+			let animationName = $(this).parent().find(".s3dPropertyEditorAnimationName").attr("animationName");
+			let unitId = thatS3dPropertyEditor.currentUnitJson.id;
+			thatS3dPropertyEditor.manager.viewer.runAnimation(unitId, animationName);
+		});
+	}
+
+	this.getAnimationInfoContainerHtml = function (unitJson){
+		let resourceDirectory = unitJson.parameters["文件夹"].value;
+		let resourceFileName = unitJson.parameters["文件名"].value;
+		let resourcePartName = unitJson.parameters["组成部分"].value;
+		let resourceType = unitJson.parameters["类型"].value;
+		let resourceKey = thatS3dPropertyEditor.manager.object3DCache.getResourceObject3DKey(resourceDirectory + "\\" + resourceFileName, resourceType);
+		let resourceObjectInfo = thatS3dPropertyEditor.manager.object3DCache.getResourceObject3D(resourceKey);
+		let resourceObject3d = resourceObjectInfo.object3D.children[0];
+		let animations = resourceObject3d.animations;
+		let html = "";
+		for(let i = 0; i < animations.length; i++){
+			let animation = animations[i];
+			html += "<div class='s3dPropertyEditorAnimationItem'><div class='s3dPropertyEditorAnimationName' animationName='" + animation.name + "'>" + animation.name + "</div><div class='s3dPropertyEditorAnimationRunBtn'>执行</div></div>"
+		}
+		return html;
+	}
+
 	this.initMaterialInfoContainer = function(propertyEditorInnerContainer, unitJson){
 		let materialInfoHtml = unitJson.isServer ? "" : thatS3dPropertyEditor.getMaterialInfoContainerHtml(unitJson);
 		let materialInfoContainer = $(propertyEditorInnerContainer).find(".s3dPropertyEditorInfoContainer[name='materialInfo']")[0];
 		$(materialInfoContainer).html(materialInfoHtml);
 
 		thatS3dPropertyEditor.refreshMaterialInfo(unitJson, materialInfoContainer);
+
+		//显示材质代码
+		$(materialInfoContainer).find(".s3dPropertyEditorMaterialCode").click(function (){
+			let materialInfoContainer = $(propertyEditorInnerContainer).find(".s3dPropertyEditorInfoContainer[name='materialInfo']")[0];
+			let sourceMatName = $(this).parent().parent().attr("matName");
+			let destMatName = $(materialInfoContainer).find(".s3dPropertyEditorItemInput[name='material'][matName='" + sourceMatName + "']").val();
+			let matName = destMatName == null || destMatName.length === 0 ? sourceMatName : destMatName;
+			let unitId = thatS3dPropertyEditor.currentUnitJson.id;
+			let object3d = thatS3dPropertyEditor.manager.viewer.getObject3DById(unitId);
+			let objMaterialInfo = thatS3dPropertyEditor.manager.resourceLoader.getObject3DMaterialInfo(object3d);
+			let material = objMaterialInfo.materialHash[matName].material;
+			let materialJson = material.toJSON();
+			if(materialJson.images != null){
+				for(let i = 0; i < materialJson.images.length; i++){
+					let image = materialJson.images[i];
+					if(typeof(image.url) === "string"){
+						if(image.url.startWith("data:image")) {
+							image.url = "data:image";
+						}
+					}
+					else{
+						image.url.data = null;
+					}
+				}
+			}
+			msgBox.alert({info: JSON.stringify(materialJson, null, 2)});
+		});
 
 		//材质环境反射率
 		let envMapIntensityInput = $(materialInfoContainer).find(".s3dPropertyEditorItemInputDecimal[name='envMapIntensity']");
@@ -416,27 +480,6 @@ this.initSeniorInfoContainer = function(propertyEditorInnerContainer, unitJson){
 			}
 		});
 
-		//设置本地构件材质属性值
-		this.changeLocalObject3DMaterialPropertyValue = function (unitId, materialName, propertyName, propertyValue){
-			let unitObject3D = thatS3dPropertyEditor.manager.viewer.allObject3DMap[unitId];
-			let unitInfo = unitObject3D.userData.unitInfo;
-			if(unitInfo.materials == null){
-				unitInfo.materials = {};
-			}
-			let materialInfo = unitInfo.materials[materialName];
-			if(materialInfo == null) {
-				materialInfo = {};
-				unitInfo.materials[materialName] = materialInfo;
-			}
-			if (propertyValue == null || propertyValue.length === 0) {
-				delete materialInfo[propertyName];
-			}
-			else{
-				materialInfo[propertyName] = propertyValue;
-			}
-			return thatS3dPropertyEditor.manager.localObjectCreator.setLocalObject3DMaterialPropertyValue(unitObject3D, unitInfo, materialName, propertyName, propertyValue);
-		}
-
 		//选择材质按钮
 		let selectPointsInput = $(materialInfoContainer).find(".s3dPropertyEditorItemMaterialPicker");
 		$(selectPointsInput).click( function(e) {
@@ -463,6 +506,27 @@ this.initSeniorInfoContainer = function(propertyEditorInnerContainer, unitJson){
 			}
 
 		});
+	}
+
+	//设置本地构件材质属性值
+	this.changeLocalObject3DMaterialPropertyValue = function (unitId, materialName, propertyName, propertyValue){
+		let unitObject3D = thatS3dPropertyEditor.manager.viewer.allObject3DMap[unitId];
+		let unitInfo = unitObject3D.userData.unitInfo;
+		if(unitInfo.materials == null){
+			unitInfo.materials = {};
+		}
+		let materialInfo = unitInfo.materials[materialName];
+		if(materialInfo == null) {
+			materialInfo = {};
+			unitInfo.materials[materialName] = materialInfo;
+		}
+		if (propertyValue == null || propertyValue.length === 0) {
+			delete materialInfo[propertyName];
+		}
+		else{
+			materialInfo[propertyName] = propertyValue;
+		}
+		return thatS3dPropertyEditor.manager.localObjectCreator.setLocalObject3DMaterialPropertyValue(unitObject3D, unitInfo, materialName, propertyName, propertyValue);
 	}
 
 	this.afterViewerSelectPoints = function(p){
@@ -1236,7 +1300,7 @@ this.initSeniorInfoContainer = function(propertyEditorInnerContainer, unitJson){
 						colorStr = cmnPcr.getColorStr(materialInfo.color);
 					}
 					html = html + "<div class=\"s3dPropertyEditorItemContainer\" matName=\"" + matInfo.name +"\">"
-						+ "<div class=\"s3dPropertyEditorItemGroup\"><div class=\"s3dPropertyEditorItemGroupTitle\">" + cmnPcr.html_encode(matInfo.name) + "</div></div>"
+						+ "<div class=\"s3dPropertyEditorItemGroup\"><div class=\"s3dPropertyEditorItemGroupTitle\">" + cmnPcr.html_encode(matInfo.name) + "</div><div class='s3dPropertyEditorMaterialCode'>代码</div></div>"
 						+ "</div>";
 
 					html = html + "<div class=\"s3dPropertyEditorItemContainer\">"

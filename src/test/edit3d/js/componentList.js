@@ -117,5 +117,25 @@ export const componentList = [{
 				z: 0.1
 			}
 		}]
+	},{
+		code: "0501",
+		name: "机械",
+		components: [{
+			code: "0501-1001",
+			name: "机械蝎子",
+			versionNum: "1.0",
+			isLocal: true,
+			fileInfo: {
+				type: "fbx",
+				directory: "机械蝎子",
+				fileName: "机械蝎子.fbx",
+				imgName: "机械蝎子.png"
+			},
+			scale:{
+				x: 0.1,
+				y: 0.1,
+				z: 0.1
+			}
+		}]
 	}]
 }];

@@ -638,6 +638,25 @@ let S3dLocalObjectCreator = function (){
 		return thatS3dLocalObjectCreator.componentKey2JsonMap[key];
 	}
 
+	this.getUnitCacheKey = function (unitJson){
+		let parameters = thatS3dLocalObjectCreator.getRequestParameters(unitJson);
+		return thatS3dLocalObjectCreator.getCacheKey(unitJson.code, unitJson.versionNum, parameters);
+	}
+
+	this.getRequestParameters = function (unitJson){
+		let componentInfo = thatS3dLocalObjectCreator.getComponentInfo(unitJson.code, unitJson.versionNum);
+		let parameters = {};
+		for(let paramName in unitJson.parameters){
+			if(componentInfo.parameters[paramName]){
+				parameters[paramName] = {
+					value: unitJson.parameters[paramName].value,
+					isGeo: componentInfo.parameters[paramName].isGeo
+				};
+			}
+		}
+		return parameters;
+	}
+
 	this.getCacheKey = function(componentCode, versionNum, parameters){
 		return thatS3dLocalObjectCreator.manager.object3DCache.getComponentObject3DKey(componentCode, versionNum, parameters, false, null, null, false);
 	}
